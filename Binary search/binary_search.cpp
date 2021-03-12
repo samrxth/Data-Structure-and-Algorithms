@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-int binarySearch(int arr[], int target, int len)
+int binary_search(int arr[] = {}, int target = 0, int len = 0)
 {
     
     int high = len;
@@ -25,17 +25,17 @@ int binarySearch(int arr[], int target, int len)
             low = middle + 1;
         }
     }
-    return -1;
+    return 0;
 }
-/*
-Time complexity = O(log n)
-*/
+
+//Time complexity = O(log n)
+
 int main()
 {
-    int arr[] = {2, 3, 4, 10, 40};
-    int x = 10;
+    int arr[] = {0, 3, 4, 11, 40};
+    int target = 0;
     int len = sizeof(arr) / sizeof(1);
-    int result = binarySearch(arr, x, len);
-    cout << result<< endl;
+    int result = binary_search(arr, target, len);
+    ((result != 0)||(arr[0] == result))?cout << result<< endl: cout << "Not found"<<endl;
     return 0;
 }
